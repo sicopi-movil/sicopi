@@ -64,7 +64,7 @@ body.locked42 main.wrap,body.locked42 #nav28,body.locked42 #subnav28,body.locked
 <div id="sicopiIdbWarning" style="display:none;margin:12px auto;max-width:1050px;padding:14px;border-radius:12px;background:#fff5da;color:#6d5000;font-size:14px;line-height:1.5"></div>
 <header><div class="wrap"><h1>SICOPI MÓVIL</h1><small>Sistema de Control de Personal e Inventario · SICOPI 4.3 Instalable · Base local en IndexedDB</small></div><div id="sessionBar"><span id="sessionInfo">Sin sesión</span><button type="button" id="switchUserBtn">Cambiar usuario / Cerrar sesión</button></div></header><div id="loginScreen"><div class="loginBox">
 <h1>SICOPI MÓVIL</h1>
-<p>Sistema de Control de Personal e Inventario · SICOPI 4.2 Roles</p>
+<p>Sistema de Control de Personal e Inventario · SICOPI 4.3 Instalable</p>
 <p>Inicia sesión para entrar. Todo queda registrado a nombre de quien entra.</p><div class="loginTabs" role="tablist"><button type="button" data-login-tab="admin" aria-current="page">🔐 Administrador</button><button type="button" data-login-tab="worker">👷 Trabajador</button><button type="button" data-login-tab="check">🕒 Checador</button></div>
 <p id="loginMsg" class="loginMsg" role="status"></p><script>
 (function(){var box=document.querySelector('#loginScreen .loginBox');if(!box)return;box.addEventListener('click',function(e){var b=e.target.closest('[data-login-tab]');if(!b)return;var tab=b.getAttribute('data-login-tab');var map={admin:'loginCardAdmin',worker:'loginCardWorker',check:'loginCardCheck'};for(var k in map){var c=document.getElementById(map[k]);if(c)c.hidden=(k!==tab);}box.querySelectorAll('[data-login-tab]').forEach(function(x){if(x===b)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});});})();
