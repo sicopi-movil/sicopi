@@ -1,7 +1,7 @@
 /* SICOPI 4.4 — Service Worker: deja SICOPI usable sin conexión una vez instalado.
    Solo funciona en http(s), nunca en file:// ni content://. No toca los datos:
    IndexedDB sigue siendo la base; esto solo guarda los archivos en caché. */
-const CACHE = 'sicopi-4.4-v2';
+const CACHE = 'sicopi-4.4-v3';
 const CORE = [
   'sicopi_movil_4.4_licencias.html',
   'sicopi-manifest.json',
