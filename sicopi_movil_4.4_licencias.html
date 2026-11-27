@@ -1797,7 +1797,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   var low=typeof db!=='undefined'?db.products.filter(p=>p.active&&Number(p.stock)<=Number(p.min||0)).sort((a,b)=>Number(a.stock)-Number(b.stock)):[];
   if (el=document.getElementById('homeLow28')) el.textContent=low.length;
   var lw=document.getElementById('licWarn28');
-  if (lw) { var st=(typeof licStatus==='function')?licStatus():{state:'ok'}; if (st.state==='ok'&&st.warn) { lw.hidden=false; lw.textContent='⚠️ Tu licencia ' + licPlanName(st.rec.plan) + ' vence el ' + new Date(st.rec.expiresAt).toLocaleDateString('es-MX') + ' (quedan ' + st.daysLeft + ' días). Pide tu código de renovación para no quedarte sin servicio.'; } else lw.hidden=true; }
+  if (lw) { var st=(typeof licStatus==='function')?licStatus():{state:'ok'}; if (st.state==='ok'&&st.warn) { lw.hidden=false; lw.innerHTML='⚠️ Tu licencia ' + licPlanName(st.rec.plan) + ' vence el ' + new Date(st.rec.expiresAt).toLocaleDateString('es-MX') + ' (quedan ' + st.daysLeft + ' días). Pide tu código de renovación para no quedarte sin servicio. <button type="button" id="licRenewBtn" style="background:#176caa;color:#fff;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;margin:6px 0 0 8px">Renovar</button>'; var rb=document.getElementById('licRenewBtn'); if (rb) rb.onclick=()=>{ if(!requireRoleAdmin('renovar la licencia')) return; showLicense('change'); }; } else lw.hidden=true; }
   var chart=document.getElementById('homeChart28');
   if (chart) {
     var key=function(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
